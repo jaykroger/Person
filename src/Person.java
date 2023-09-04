@@ -50,16 +50,27 @@ public class Person {
         return yearOfBirth;
     }
 
-    public void setYearOfBirth(int yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
+    // ToString construct
+    @Override
+    public String toString() {
+        return "Person{" +
+                "ID='" + ID + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", title='" + title + '\'' +
+                ", yearOfBirth=" + yearOfBirth +
+                ", c=" + c +
+                '}';
     }
 
 
+    // New methods
     Calendar c = Calendar.getInstance();
 
     // New Methods
     public String fullName(String firstName, String lastName) {
-        return firstName + " " + lastName;
+        String fullName = firstName + " " + lastName;
+        return fullName;
     } // returns the full name of the user (first name + space + last name)
 
     public String formalName(String title, String firstName, String lastName) {
