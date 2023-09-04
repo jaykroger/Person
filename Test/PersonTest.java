@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
 class PersonTest {
 
     Person p1 = new Person("000001", "Bilbo", "Baggins", "Esq.", 1060);
@@ -8,6 +10,16 @@ class PersonTest {
     Person p5 = new Person("000005", "Meridoc", "Brandybuck", "Esq.", 1126);
 
     // Constructors Testings
+    @Test
+    void getID() {assertEquals("000001", p1.getID());}
+    @Test
+    void getFirstName() {assertEquals("Bilbo", p1.getFirstName());}
+    @Test
+    void getLastName() {assertEquals("Baggins", p1.getLastName());}
+    @Test
+    void getTitle() {assertEquals("Esq.", p1.getTitle());}
+    @Test
+    void getYearOfBirth() {assertEquals(1060, p1.getYearOfBirth());}
 
 
 
@@ -35,7 +47,6 @@ class PersonTest {
 
     @Test
     void fullName() {
-        fullName();
     }
 
     @Test
