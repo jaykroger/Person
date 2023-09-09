@@ -68,22 +68,22 @@ public class Person {
     Calendar c = Calendar.getInstance();
 
     // New Methods
-    public String fullName(String firstName, String lastName) {
-        String fullName = firstName + " " + lastName;
+    public String fullName() {
+        String fullName = getFirstName() + " " + getLastName();
         return fullName;
     } // returns the full name of the user (first name + space + last name)
 
-    public String formalName(String title, String firstName, String lastName) {
-        return title + " " + fullName(firstName, lastName);
+    public String formalName() {
+        return getTitle() + " " + getFirstName() + " " + getLastName();
     } // returns the formal full name of the user (title + full name)
 
-    public int getAge(int YOB) {
+    public int getAge() {
         int currentYear = c.get(Calendar.YEAR);
-        return currentYear - YOB;
+        return currentYear - getYearOfBirth();
     } // returns the age assuming the current year
 
-    public int getAgeSpecifiedYear(int year, int YOB) {
-        int age = year - YOB;
+    public int getAgeSpecifiedYear(int year) {
+        int age = year - getYearOfBirth();
         return age;
     } // uses YOB to calculate age for a specified year based on the Calendar object
 }
